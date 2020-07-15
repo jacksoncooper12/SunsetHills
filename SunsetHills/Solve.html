@@ -68,12 +68,12 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row inputPad">
-            <div class="col"><input id="sunsetIn1" class="form-control" placeholder="Building 1 Height" /></div>
-            <div class="col"><input id="sunsetIn2" class="form-control" placeholder="Building 2 Height" /></div>
-            <div class="col"><input id="sunsetIn3" class="form-control" placeholder="Building 3 Height" /></div>
-            <div class="col"><input id="sunsetIn4" class="form-control" placeholder="Building 4 Height" /></div>
-            <div class="col"><input id="sunsetIn5" class="form-control" placeholder="Building 5 Height" /></div>
-            <div class="col"><input id="sunsetIn6" class="form-control" placeholder="Building 6 Height" /></div>
+            <div class="col"><input id="sunsetIn1" class="form-control" placeholder="Building 1 Height" onkeypress="return isNumberKey(event)"/></div>
+            <div class="col"><input id="sunsetIn2" class="form-control" placeholder="Building 2 Height" onkeypress="return isNumberKey(event)"/></div>
+            <div class="col"><input id="sunsetIn3" class="form-control" placeholder="Building 3 Height" onkeypress="return isNumberKey(event)"/></div>
+            <div class="col"><input id="sunsetIn4" class="form-control" placeholder="Building 4 Height" onkeypress="return isNumberKey(event)"/></div>
+            <div class="col"><input id="sunsetIn5" class="form-control" placeholder="Building 5 Height" onkeypress="return isNumberKey(event)"/></div>
+            <div class="col"><input id="sunsetIn6" class="form-control" placeholder="Building 6 Height" onkeypress="return isNumberKey(event)"/></div>
         </div>
         <div class="row inputPad">
             <div class="col text-center">
@@ -87,7 +87,7 @@
         <hr />
         <div class="row inputPad">
             <div class="col text-center">
-                <p id="output"></p>
+                <h3 id="output"></h3>
             </div>
         </div>
         <div class="row inputPad">
@@ -140,7 +140,8 @@
                     },
                     series: [
                         {
-                            values: valueArray
+                            values: valueArray,
+                            "background-color": "#545454"
                         }
                     ]
                 }
