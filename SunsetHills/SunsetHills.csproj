@@ -71,6 +71,7 @@
     <Content Include="css\main.css" />
     <Content Include="images\bestSunBG.jpg" />
     <Content Include="images\betterSunBG.jpg" />
+    <Content Include="images\realbestSunBG.jpg" />
     <Content Include="images\SunBG.jpg" />
     <Content Include="Index.html" />
     <Content Include="scripts\main.js" />
