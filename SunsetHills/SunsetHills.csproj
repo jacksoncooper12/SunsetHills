@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Code.html" />
     <Content Include="css\main.css" />
+    <Content Include="images\SunBG.jpg" />
     <Content Include="Index.html" />
     <Content Include="scripts\main.js" />
     <Content Include="Solve.html" />

@@ -65,13 +65,87 @@
     </nav>
 
     <!-- Page Content -->
+    <div class="container">
+        <div class="row inputPad">
+            <div class="col"><input id="sunsetIn1" class="form-control" placeholder="Building 1 Height" /></div>
+            <div class="col"><input id="sunsetIn2" class="form-control" placeholder="Building 2 Height" /></div>
+            <div class="col"><input id="sunsetIn3" class="form-control" placeholder="Building 3 Height" /></div>
+            <div class="col"><input id="sunsetIn4" class="form-control" placeholder="Building 4 Height" /></div>
+            <div class="col"><input id="sunsetIn5" class="form-control" placeholder="Building 5 Height" /></div>
+            <div class="col"><input id="sunsetIn6" class="form-control" placeholder="Building 6 Height" /></div>
+        </div>
+        <div class="row inputPad">
+            <div class="col text-center">
+                <button id="btnSunset" class="btn btn-success btnWide" onclick="produce()">Test</button>
+            </div>
+            <div class="col text-center">
+                <button id="clear" class="btn btn-danger btnWide">Clear</button>
+            </div>
 
+        </div>
+        <hr />
+        <div class="row inputPad">
+            <div class="col text-center">
+                <p id="output"></p>
+            </div>
+        </div>
+        <div class="row inputPad">
+            <div class="col">
+                <div id="myChart"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        function produce() {
+            var b1 = parseInt($("#sunsetIn1").val());
+            var b2 = parseInt($("#sunsetIn2").val());
+            var b3 = parseInt($("#sunsetIn3").val());
+            var b4 = parseInt($("#sunsetIn4").val());
+            var b5 = parseInt($("#sunsetIn5").val());
+            var b6 = parseInt($("#sunsetIn6").val());
+            var valueArray = [NaN, b1, b2, b3, b4, b5, b6];
+            zingchart.render({
+                id: "myChart",
+                output: "svg",
+                height: 400,
+                width: '100%',
+                data: {
+                    type: "bar3d",
+                    title: {
+                        text: "Building Heights"
+                    },
+                    "background-image": 'images/SunBG.jpg',
+                    'scale-y': {
+                        "visible": false,
+                        "item": {
+                            "visible": false
+                        },
+                        "tick": {
+                            "visible": false,
+                            "line-color": "none"
+                        }
+
+                    },
+                    'scale-x': {
+                        "visible": false,
+                        labels: ["", "Building 1", "Building 2", "Building 3", "Building 4", "Building 5", "Building 6"]
+                    },
+                    series: [
+                        {
+                            values: valueArray
+                        }
+                    ]
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>
