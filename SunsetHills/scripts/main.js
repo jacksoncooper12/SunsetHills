@@ -1,5 +1,4 @@
-﻿//click event handler
-$("#btnSunset").on("click", function () {
+﻿$("#btnSunset").on("click", function () {
     let b1 = parseInt($("#sunsetIn1").val());
     let b2 = parseInt($("#sunsetIn2").val());
     let b3 = parseInt($("#sunsetIn3").val());
